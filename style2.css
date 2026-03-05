@@ -37,7 +37,7 @@ html[data-theme="dark"] {
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background: var(--page-bg);
     color: var(--text);
     display: grid;
