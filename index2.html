@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Profissional</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="calculator" aria-label="Calculadora">
+            <header class="calculator__header">
+                <p class="calculator__eyebrow">Calculadora</p>
+                <div class="calculator__header-actions">
+                    <button type="button" id="toggle-history" class="ghost-button" aria-controls="history-panel" aria-expanded="false">
+                        Histórico
+                    </button>
+                </div>
+            </header>
+
+            <div class="display" aria-live="polite">
+                <label for="visor" class="sr-only">Expressão atual</label>
+                <input id="visor" type="text" readonly value="0" autocomplete="off">
+                <output id="preview" for="visor">Pronto para calcular</output>
+            </div>
+
+            <div class="keyboard" role="group" aria-label="Teclado da calculadora">
+                <button type="button" class="key key--danger" data-action="clear">AC</button>
+                <button type="button" class="key key--danger" data-action="backspace">⌫</button>
+                <button type="button" class="key" data-value="(">(</button>
+                <button type="button" class="key" data-value=")">)</button>
+
+                <button type="button" class="key" data-action="sqrt">√</button>
+                <button type="button" class="key" data-value="^">^</button>
+                <button type="button" class="key" data-value="%">%</button>
+                <button type="button" class="key key--operator" data-value="÷">÷</button>
+
+                <button type="button" class="key" data-value="7">7</button>
+                <button type="button" class="key" data-value="8">8</button>
+                <button type="button" class="key" data-value="9">9</button>
+                <button type="button" class="key key--operator" data-value="×">×</button>
+
+                <button type="button" class="key" data-value="4">4</button>
+                <button type="button" class="key" data-value="5">5</button>
+                <button type="button" class="key" data-value="6">6</button>
+                <button type="button" class="key key--operator" data-value="-">−</button>
+
+                <button type="button" class="key" data-value="1">1</button>
+                <button type="button" class="key" data-value="2">2</button>
+                <button type="button" class="key" data-value="3">3</button>
+                <button type="button" class="key key--operator" data-value="+">+</button>
+
+                <button type="button" class="key" data-value="π">π</button>
+                <button type="button" class="key" data-value="0">0</button>
+                <button type="button" class="key" data-value=".">.</button>
+                <button type="button" class="key key--equal" data-action="calculate">=</button>
+            </div>
+        </section>
+
+        <aside id="history-panel" class="history-panel history-panel--hidden" aria-label="Histórico de cálculos">
+            <header class="history-panel__header">
+                <h2>Histórico</h2>
+                <div class="history-panel__actions">
+                    <button type="button" id="clear-history" class="ghost-button ghost-button--danger">Limpar</button>
+                    <button type="button" id="close-history" class="ghost-button">Fechar</button>
+                </div>
+            </header>
+
+            <p id="history-empty" class="history-empty">Nenhum cálculo registrado.</p>
+            <ul id="history-list" class="history-list"></ul>
+        </aside>
+    </main>
+
+    <script src="script2.js"></script>
+</body>
+</html>
